@@ -1,126 +1,728 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fanny Ventura | Portafolio Profesional</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fanny Ventura | Portafolio Profesional</title>
 
-  <!-- Bulma -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <!-- Font Awesome -->
 
-  <style>
-    body {
-      background: #fdfdfd;
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+      <!-- Tipografía moderna -->
+<!-- Fuente moderna y profesional -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+
+  body {
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: #2c3e50;
+    background-color: #dff0f7db;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #3273dc;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* HERO */
+  .hero {
+      background: url('https://img.freepik.com/free-vector/modern-desktop-background-geometric-blue-design-vector_53876-135923.jpg?semt=ais_hybrid&w=740') center center / cover;
+      color: white;
+      position: relative;
     }
-    .hero {
-      background-color: #f5f5f5;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
     }
-    .icon-text .icon {
-      margin-right: 10px;
+
+    .hero .hero-body {
+      position: relative;
+      z-index: 2;
     }
-    .section-title {
-      margin-bottom: 1.5rem;
+
+  .hero .title {
+    font-size: 2.5rem;
+  }
+
+  .hero .subtitle {
+    color: #d0dff2;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* BUTTONS */
+  .button.is-light {
+    background: white;
+    color: #2b4c7e;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+  }
+
+  .button.is-light:hover {
+    background: #f0f4f8;
+    border-color: #aaa;
+  }
+
+  .button.is-link.is-light {
+    background-color: #eef3fc;
+    border: 1px solid #c8d6f0;
+  }
+
+  .button.is-link.is-light:hover {
+    background-color: #d7e3fb;
+  }
+
+  /* TITLES */
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e2e46;
+    margin-bottom: 2rem;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* BOX SHADOWS */
+  .box {
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+  }
+
+  .box:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+
+  /* SKILL BOX */
+  .skill-box {
+    position: relative;
+    min-height: 100px;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-box:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .skill-box .icon {
+    height: 22px;
+    transition: transform 0.2s ease;
+  }
+
+  .skill-box:hover .icon {
+    transform: scale(1.1);
+  }
+
+  .skill-box .tooltip {
+    position: absolute;
+    bottom: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #363636;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+
+  .skill-box:hover .tooltip {
+    opacity: 1;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 2rem 1.5rem;
+    background-color: #1e1e1e;
+    color: #cfcfcf;
+    font-size: 0.85rem;
+  }
+
+  .footer .icon {
+    transition: transform 0.3s ease;
+  }
+
+  .footer .icon:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+
+  /* ICONS */
+  .icon {
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+  }
+
+  /* RESPONSIVE */
+  @media screen and (max-width: 768px) {
+    .hero .title {
+      font-size: 2rem;
     }
-    .tag {
-      margin: 2px;
+
+    .hero .subtitle {
+      font-size: 1rem;
     }
-  </style>
-</head>
-<body>
 
-<!-- Header -->
-<section class="hero is-light">
-  <div class="hero-body has-text-centered">
-    <p class="title is-3">Fanny Merari Ventura Reyes</p>
-    <p class="subtitle is-5">
-      Tegucigalpa, Honduras · 
-      <a href="https://linkedin.com/in/fanny-ventura" target="_blank">linkedin.com/in/fanny-ventura</a> · 
-      +504 8894 1525 · <a href="mailto:merarifannyy@gmail.com">merarifannyy@gmail.com</a>
-    </p>
-    <p class="has-text-grey-dark mt-3">Apasionada por la innovación, soluciones digitales accesibles y sostenibles. Comprometida con el impacto social y el desarrollo profesional continuo.</p>
-  </div>
-</section>
+    .section {
+      padding: 3rem 1rem;
+    }
+  }
+</style>
 
-<!-- Experiencia -->
-<section class="section">
-  <div class="container">
-    <h2 class="title is-4 section-title has-text-link"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
-    <div class="box">
-      <p><strong>Red de Desarrollo Sostenible Honduras (RDS HN)</strong> · Tegucigalpa, Honduras</p>
-      <p><em>Desarrollador Web / Soporte Técnico · Octubre 2023 – Actualidad</em></p>
-      <ul>
-        <li>🎨 Personalicé temas en <strong>Drupal y WordPress</strong>, adaptando diseños a cada proyecto.</li>
-        <li>🗂️ Estructuré y administré <strong>contenidos digitales</strong> con claridad y funcionalidad.</li>
-        <li>🔁 Configuré flujos de trabajo para <strong>aprobación de contenido</strong>.</li>
-        <li>🔧 Actualicé módulos y componentes del core de plataformas.</li>
-        <li>🤝 Colaboré con diseñadores para mantener la coherencia del producto final.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <style>
+      body {
+        background: #ffffff;
+      }
+      .hero {
+        background-color: #f4f4f4;
+      }
+      .section-title {
+        margin-bottom: 1.5rem;
+      }
+      .project-card {
+        transition: box-shadow 0.3s;
+      }
+      .project-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero -->
+    <!-- Header Profesional -->
+    <!-- Header Profesional con Lucide -->
+    <section class="hero is-medium is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-1 has-text-white">Fanny Ventura Reyes</h1>
+          <h2 class="subtitle is-5 has-text-white-ter">
+            Desarrolladora Web · Innovadora Digital · Impacto Social
+          </h2>
+  
+          <div class="buttons is-centered mt-4">
+            <a class="button is-light" href="mailto:merarifannyy@gmail.com">
+              <span class="icon"><i data-lucide="mail"></i></span>
+              <span>Email</span>
+            </a>
+            <a class="button is-light" href="https://linkedin.com/in/fanny-ventura" target="_blank">
+              <span class="icon"><i data-lucide="linkedin"></i></span>
+              <span>LinkedIn</span>
+            </a>
+            <a class="button is-light" href="#" target="_blank">
+              <span class="icon"><i data-lucide="github"></i></span>
+              <span>GitHub</span>
+            </a>
+          </div>
+  
+          <p class="mt-5 has-text-white-ter is-size-6">
+            Creo soluciones digitales accesibles y sostenibles con propósito.<br />
+            Comprometida con la mejora continua y el aprendizaje constante.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section has-background-white">
+      <div class="container">
 
-<!-- Educación -->
-<section class="section has-background-light">
-  <div class="container">
-    <h2 class="title is-4 section-title has-text-primary"><i class="fas fa-graduation-cap"></i> Educación</h2>
-    <div class="box">
-      <p><strong>Universidad Nacional Autónoma de Honduras (UNAH)</strong> · Tegucigalpa, Honduras</p>
-      <p><em>Licenciatura en Informática Administrativa — 2024</em></p>
-      <p>Mención Honorífica - Cum Laudem (Excelencia Académica)</p>
-    </div>
-  </div>
-</section>
+        <h2 class="title is-3 has-text-centered has-text-dark mb-6">
+          <i data-lucide="zap"></i> Habilidades Destacadas
+        </h2>
 
-<!-- Habilidades -->
-<section class="section">
-  <div class="container">
-    <h2 class="title is-4 section-title has-text-info"><i class="fas fa-tools"></i> Skills Adicionales</h2>
-    <div class="content">
-      <ul>
-        <li>💻 <strong>Tecnologías web:</strong> HTML5, CSS3, JS, PHP, MySQL, Bootstrap, Bulma.</li>
-        <li>🖥️ <strong>CMS:</strong> Experiencia en WordPress, Drupal, Chamilo LMS.</li>
-        <li>🔐 <strong>Infraestructura:</strong> Hosting, cPanel, DNS, servidores.</li>
-        <li>🎨 <strong>Herramientas digitales:</strong> Figma, UI/UX, Office 365, IA aplicada.</li>
-        <li>🌍 <strong>Idiomas:</strong> Español (nativo), Inglés (B1).</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <div class="columns is-multiline is-centered is-variable is-2 is-mobile">
+          <!-- Repite este bloque para cada habilidad -->
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="code" class="icon mb-2 has-text-primary"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">HTML5</p>
+              <div class="tooltip">Maquetación semántica</div>
+            </div>
+          </div>
 
-<!-- Certificaciones -->
-<section class="section has-background-light">
-  <div class="container">
-    <h2 class="title is-4 section-title has-text-warning"><i class="fas fa-certificate"></i> Certificaciones</h2>
-    <div class="tags">
-      <span class="tag is-link">Git y GitHub (Udemy, 2024)</span>
-      <span class="tag is-warning">Huawei - Cloud Advanced</span>
-      <span class="tag is-info">Python (Samsung, 2023)</span>
-      <span class="tag is-primary">Oracle SQL & Java (INFOP)</span>
-      <span class="tag is-success">Get Connected (Cisco)</span>
-      <span class="tag is-dark">PL/SQL, MySQL (INFOP)</span>
-      <span class="tag is-light">IoT (Cisco, 2019)</span>
-    </div>
-  </div>
-</section>
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="paintbrush" class="icon mb-2 has-text-info"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">CSS3</p>
+              <div class="tooltip">Diseño adaptable</div>
+            </div>
+          </div>
 
-<!-- Contacto -->
-<section class="section has-text-centered">
-  <div class="container">
-    <h2 class="title is-4 section-title"><i class="fas fa-envelope"></i> Contacto</h2>
-    <p class="mb-3">¿Interesado en colaborar o contratar? ¡Hablemos!</p>
-    <p>
-      📧 <a href="mailto:merarifannyy@gmail.com">merarifannyy@gmail.com</a><br>
-      🔗 <a href="https://linkedin.com/in/fanny-ventura" target="_blank">LinkedIn</a>
-    </p>
-  </div>
-</section>
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="cpu" class="icon mb-2 has-text-warning"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">JavaScript</p>
+              <div class="tooltip">Interactividad dinámica</div>
+            </div>
+          </div>
 
-<!-- Footer -->
-<footer class="footer has-text-centered">
-  <p>&copy; 2025 Fanny Ventura. Todos los derechos reservados.</p>
-</footer>
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="layers" class="icon mb-2 has-text-link"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">WordPress</p>
+              <div class="tooltip">Gestión de contenidos</div>
+            </div>
+          </div>
 
-</body>
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="database" class="icon mb-2 has-text-success"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">Drupal</p>
+              <div class="tooltip">CMS estructurado</div>
+            </div>
+          </div>
+
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="server-cog" class="icon mb-2 has-text-grey"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">cPanel</p>
+              <div class="tooltip">Gestión de hosting</div>
+            </div>
+          </div>
+
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="git-branch" class="icon mb-2 has-text-danger"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">Git & GitHub</p>
+              <div class="tooltip">Control de versiones</div>
+            </div>
+          </div>
+
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="table" class="icon mb-2 has-text-success"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">MySQL</p>
+              <div class="tooltip">Base de datos relacional</div>
+            </div>
+          </div>
+
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i
+                data-lucide="database-zap"
+                class="icon mb-2 has-text-orange"
+              ></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">Oracle</p>
+              <div class="tooltip">Administración avanzada</div>
+            </div>
+          </div>
+
+          <div class="column is-4-mobile is-3-tablet is-2-desktop">
+            <div class="box has-text-centered skill-box">
+              <i data-lucide="file-text" class="icon mb-2 has-text-link"></i>
+              <p class="has-text-weight-medium is-size-7 mb-1">
+                Microsoft Office
+              </p>
+              <div class="tooltip">Suite clásica</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <style>
+      .skill-box {
+        position: relative;
+        padding: 1rem 0.5rem;
+        transition: box-shadow 0.2s;
+        border-radius: 8px;
+        background-color: #fff;
+      }
+    
+      .skill-box:hover {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    
+      .skill-box .tooltip {
+        position: absolute;
+        bottom: -0.7rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #363636;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.65rem;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 10;
+      }
+    
+      .skill-box:hover .tooltip {
+        opacity: 1;
+      }
+    
+      .skill-box .icon {
+        height: 20px;
+      }
+    </style>
+
+    <section class="section has-background-white">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered has-text-dark mb-6">
+          <i data-lucide="briefcase"></i> Experiencia Profesional
+        </h2>
+        <div class="column is-4">
+          <div class="has-text-centered">
+            
+            
+          </div>
+          <p class="title is-5 has-text-link">Desarrolladora Web Front-End</p>
+            <p class="subtitle is-6 has-text-grey-dark mb-1">
+              Red de Desarrollo Sostenible Honduras
+            </p>
+            <p class="is-size-7 has-text-grey">2021 – Actualidad</p>
+        </div>
+        <div class="columns is-variable is-8 is-vcentered">
+          <!-- Información lateral -->
+
+          <!-- Descripción narrativa profesional con íconos -->
+          <div class="column is-12">
+            <div
+              class="has-background-white-bis p-5"
+              style="border-left: 4px solid #3273dc; border-radius: 8px">
+              <div class="mb-4 is-flex">
+                <i
+                  data-lucide="layout-template"
+                  class="mr-3"
+                  style="height: 24px; color: #3273dc"
+                ></i>
+                <div>
+                  <p class="has-text-weight-semibold is-size-6 mb-1">
+                    Personalización y desarrollo
+                  </p>
+                  <p class="is-size-6">
+                    Personalizar temas en <strong>Drupal</strong> y
+                    <strong>WordPress</strong> utilizando
+                    <strong>PHP, HTML/CSS, JavaScript</strong> y
+                    <strong>Bootstrap</strong> para crear soluciones web
+                    adaptadas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-4 is-flex">
+                <i
+                  data-lucide="file-text"
+                  class="mr-3"
+                  style="height: 24px; color: #00b89c"
+                ></i>
+                <div>
+                  <p class="has-text-weight-semibold is-size-6 mb-1">
+                    Gestión de contenidos
+                  </p>
+                  <p class="is-size-6">
+                    Administrar contenidos digitales en
+                    <strong>Drupal, WordPress</strong> y
+                    <strong>Chamilo LMS</strong>, garantizando una organización
+                    clara y funcional.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-4 is-flex">
+                <i
+                  data-lucide="workflow"
+                  class="mr-3"
+                  style="height: 24px; color: #ff9900"
+                ></i>
+                <div>
+                  <p class="has-text-weight-semibold is-size-6 mb-1">
+                    Automatización editorial
+                  </p>
+                  <p class="is-size-6">
+                    Configurar flujos de trabajo para revisión y aprobación de
+                    contenido, optimizando los procesos internos.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-4 is-flex">
+                <i
+                  data-lucide="shield-check"
+                  class="mr-3"
+                  style="height: 24px; color: #e76e55"
+                ></i>
+                <div>
+                  <p class="has-text-weight-semibold is-size-6 mb-1">
+                    Mantenimiento técnico
+                  </p>
+                  <p class="is-size-6">
+                    Actualizar el core, módulos y plugins para mantener la
+                    <strong>seguridad</strong>, <strong>estabilidad</strong> y
+                    <strong>rendimiento</strong> de los sistemas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="is-flex">
+                <i
+                  data-lucide="users"
+                  class="mr-3"
+                  style="height: 24px; color: #5a5c69"
+                ></i>
+                <div>
+                  <p class="has-text-weight-semibold is-size-6 mb-1">
+                    Colaboración interdisciplinaria
+                  </p>
+                  <p class="is-size-6">
+                    Colaborar con <strong>diseñadores</strong> y
+                    <strong>equipos técnicos</strong> para asegurar productos
+                    coherentes, accesibles y visualmente sólidos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered mb-6">
+          <i data-lucide="folder-open"></i> Portafolio de Proyectos
+        </h2>
+
+        <div class="columns is-multiline is-variable is-6">
+          <!-- Historia Personal y Profesional -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-primary mb-2">
+                <i data-lucide="user"></i>
+              </span>
+              <h4 class="title is-5">Historia Personal</h4>
+              <p class="content is-size-6">
+                Sitio personal construido en WordPress.
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+
+          <!-- Becas HN -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-success mb-2">
+                <i data-lucide="graduation-cap"></i>
+              </span>
+              <h4 class="title is-5">Becas HN</h4>
+              <p class="content is-size-6">
+                Portal de acceso a becas construido en drupal.
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+
+          <!-- Candelario Reyes -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-warning mb-2">
+                <i data-lucide="book-open"></i>
+              </span>
+              <h4 class="title is-5">Candelario Reyes</h4>
+              <p class="content is-size-6">
+                Sitio literario construido en WordPress.
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+
+          <!-- Empleos.hn -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-info mb-2">
+                <i data-lucide="briefcase"></i>
+              </span>
+              <h4 class="title is-5">Empleos.hn</h4>
+              <p class="content is-size-6">
+              Portal de empleos construido en drupal.
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+
+          <!-- Espacio Cívico -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-danger mb-2">
+                <i data-lucide="globe"></i>
+              </span>
+              <h4 class="title is-5">Aporto</h4>
+              <p class="content is-size-6">
+                Plataforma informativa construida en WordPress.
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+
+          <!-- Eventos.hn -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-link mb-2">
+                <i data-lucide="calendar-days"></i>
+              </span>
+              <h4 class="title is-5">Eventos.hn</h4>
+              <p class="content is-size-6">
+                Agenda cultural y social desarrollada en Drupal
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+
+          <!-- Portal Transparencia -->
+          <div
+            class="column is-12-mobile is-6-tablet is-4-desktop is-3-widescreen"
+          >
+            <div class="box has-text-centered">
+              <span class="icon is-large has-text-dark mb-2">
+                <i data-lucide="eye"></i>
+              </span>
+              <h4 class="title is-5"> Transparencia</h4>
+              <p class="content is-size-6">
+                Plataforma informativa construida en WordPress.
+              </p>
+              <a
+                class="button is-link is-light is-small mt-2"
+                href="#"
+                target="_blank"
+              >
+                <i data-lucide="external-link"></i>&nbsp; Ver sitio
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer has-background-dark has-text-white-ter">
+      <div class="container">
+        <div class="columns is-vcentered is-variable is-6">
+          <!-- Información principal -->
+          <div class="column is-6 has-text-centered-touch">
+            <p>© 2025 Fanny Ventura — Todos los derechos reservados.</p>
+          </div>
+
+          <!-- Redes sociales (opcional) -->
+          <div class="column is-6 has-text-right has-text-centered-touch">
+            <a
+              href="mailto:merarifannyy@gmail.com"
+              class="icon has-text-white-ter mx-2"
+              title="Email"
+            >
+              <i data-lucide="mail" style="height: 20px"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/fanny-ventura"
+              class="icon has-text-white-ter mx-2"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i data-lucide="linkedin" style="height: 20px"></i>
+            </a>
+            <a
+              href="#"
+              class="icon has-text-white-ter mx-2"
+              target="_blank"
+              title="GitHub"
+            >
+              <i data-lucide="github" style="height: 20px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- Activar los íconos -->
+  <script>
+    lucide.createIcons();
+  </script>
 </html>
